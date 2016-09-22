@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,6 +49,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:background="#FFF">
             <TextView
@@ -70,72 +71,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
+            android:padding="5dp"
+            android:background="#79e479"
+            android:text="News feed"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="30dp"
+            android:textColor="#ffffff"
+            android:textAlignment="center"/>
+        <ListView
+            android:id="@+id/news_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:text="TEST"
-            android:textSize="100dp"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp"
+            android:layout_height="500dp"></ListView>
 
     </LinearLayout>
 
