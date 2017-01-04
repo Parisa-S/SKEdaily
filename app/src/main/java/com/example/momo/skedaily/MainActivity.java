@@ -12,9 +12,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.example.momo.skedaily.Adapter.NewsAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private List<News> news;
+    private ListView newsList;
+    private NewsAdapter newsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +32,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +41,27 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        this.initComponent();
+    }
+
+    public void initComponent(){
+        news = new ArrayList<News>();
+        addNews();
+        newsList = (ListView) findViewById(R.id.news_list);
+        newsAdapter = new NewsAdapter(this, R.layout.news_cell,news);
+        newsList.setAdapter(newsAdapter);
+
+    }
+
+    public void addNews(){
+        News news1 = new News("John Snow","20/9/2559","Algo class Cancel",1);
+        News news2 = new News("John Snow","20/9/2559","Discrete has makeup class at 24/9/2559",1);
+        News news3 = new News("John Snow","20/9/2559","Probstat HW1 was added",1);
+        News news4 = new News("John Snow","20/9/2559","WSP class Cancel",1);
+        news.add(news1);
+        news.add(news2);
+        news.add(news3);
+        news.add(news4);
     }
 
     @Override
